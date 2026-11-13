@@ -1,0 +1,31 @@
+{
+	"name": "cypress-cucumber-task-overhead",
+	"version": "1.0.0",
+	"private": true,
+	"description": "Measures the cy.task round trips emitted by @badeball/cypress-cucumber-preprocessor when a report is enabled",
+	"engines": {
+		"node": "^22 || ^24 || >=26"
+	},
+	"scripts": {
+		"generate": "node scripts/generate-feature.mjs",
+		"test:no-report": "cypress run --expose jsonEnabled=false",
+		"test:report": "cypress run",
+		"test:report-batched": "cypress run --expose batchTasks=true",
+		"benchmark": "node scripts/benchmark.mjs",
+		"typecheck": "tsc --noEmit"
+	},
+	"cypress-cucumber-preprocessor": {
+		"json": {
+			"enabled": true,
+			"output": "cypress/report/cucumber-report.json"
+		}
+	},
+	"devDependencies": {
+		"@badeball/cypress-cucumber-preprocessor": "^28.0.1",
+		"@bahmutov/cypress-esbuild-preprocessor": "^2.2.6",
+		"@types/node": "^22.0.0",
+		"cypress": "16.2.1",
+		"cypress-on-fix": "^1.1.0",
+		"typescript": "^5.4.5"
+	}
+}

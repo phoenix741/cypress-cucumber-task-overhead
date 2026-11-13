@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Counter</title>
+	</head>
+	<body>
+		<p>Count: <span data-cy="counter">0</span></p>
+		<button data-cy="increment" type="button">Increment</button>
+		<script>
+			const counter = document.querySelector('[data-cy="counter"]');
+			document.querySelector('[data-cy="increment"]').addEventListener('click', () => {
+				counter.textContent = String(Number(counter.textContent) + 1);
+			});
+		</script>
+	</body>
+</html>

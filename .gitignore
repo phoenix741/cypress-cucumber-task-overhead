@@ -1,0 +1,6 @@
+node_modules
+cypress/report
+cypress/screenshots
+cypress/videos
+cypress/downloads
+benchmark-results.json
